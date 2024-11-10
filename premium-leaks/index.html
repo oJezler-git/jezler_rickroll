@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="preconnect" href="https://github.com" />
     <meta charset="UTF-8" />
     <meta content="width=device-width,initial-scale=1" name="viewport" />
     <title>Premium Leaks</title>
@@ -127,12 +128,20 @@
     </div>
 
     <div class="main-content" id="mainContent">
-      <video autoplay class="background-video" id="backgroundVideo" loop muted>
+      <video
+        autoplay
+        class="background-video"
+        id="backgroundVideo"
+        loop
+        muted
+        preload="auto"
+      >
         <source
           src="https://github.com/oJezler-git/jezler_rickroll/raw/refs/heads/main/video.mp4"
           type="video/mp4"
         />
       </video>
+
       <div class="glassmorphic-rectangle">
         <h1>Never Gonna Give You Up</h1>
         <div class="lyrics">
@@ -301,6 +310,10 @@
       const enterScreen = document.getElementById("enterScreen");
       const mainContent = document.getElementById("mainContent");
       const backgroundVideo = document.getElementById("backgroundVideo");
+
+      backgroundVideo.addEventListener("canplaythrough", function () {
+        console.log("Video activated 😈");
+      });
 
       enterScreen.addEventListener("click", function () {
         // attempt to request fullscreen on first click
